@@ -42,7 +42,7 @@ WORKDIR /etc/newman
 ENTRYPOINT ["newman"]
 ```
 
-I also created a `docker-compose.yml` file to help make running the collection easier, like I said before, I'm still learning Docker so this might not be needed but I'm going with it for now. For the example, I'm using a collection and environment file from my other [All-Things-Postman](https://github.com/DannyDainton/All-Things-Postman) repo.
+I also created a `docker-compose.yml` file to help make running the collection easier.  
 
 ```yml
 version: "2"
