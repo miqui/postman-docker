@@ -1,0 +1,20 @@
+apiVersion: tekton.dev/v1alpha1
+kind: TaskRun
+metadata:
+  generateName: contract-test-
+spec:
+  serviceAccount: service-account
+  taskRef:
+    name:  contract-test
+  inputs:
+   resources:
+    - name: source
+      resourceRef:
+        name: git-source
+   params:
+    - name: collectionName
+      value: Restful_Booker_Collection.json
+    - name: collectionEnvironment
+      value: Restful_Booker_Environment.json
+    - name: contextDir
+      value: apps/greeter/java/quarkus

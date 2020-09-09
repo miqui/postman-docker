@@ -12,16 +12,18 @@ spec:
         description: The name of the POSTMAN collection 
       - name: collectionEnvironment
         description: The name of the environment the collection
-      - name: imageUrl
-        description: Url of image repository
-        default: url
+      - name: sourceDir
+        description: the source dir
+        default: "src"
       - name: imageTag
         description: Tag of the images to be used.
         default: "latest"
+
   steps:
     - name: step-contract-test
-      image: miqui/postman-docker:latest
+      image: "miqui/postman-docker:$(inputs.params.imageTag)"
       command: ["run"]
+      workingDir: "/workspace/$(inputs.params.sourceDir)"
       args:
         - "$(inputs.params.collectionName)"
         - "-e environments/$(inputs.params.collectionEnvironment)"
