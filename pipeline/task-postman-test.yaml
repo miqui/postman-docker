@@ -24,5 +24,8 @@ spec:
       image: "miqui/postman-docker:$(inputs.params.imageTag)"
       workingDir: "/workspace/$(inputs.params.sourceDir)"
       args:
-        - run $(inputs.params.collectionName) -e environments/$(inputs.params.collectionEnvironment) -r cli
+        - run 
+        - $(inputs.params.collectionName) 
+        - -e environments/$(inputs.params.collectionEnvironment) 
+        - -r cli
         
