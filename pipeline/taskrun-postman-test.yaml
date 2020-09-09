@@ -16,5 +16,3 @@ spec:
       value: Restful_Booker_Collection.json
     - name: collectionEnvironment
       value: Restful_Booker_Environment.json
-    - name: contextDir
-      value: apps/greeter/java/quarkus
