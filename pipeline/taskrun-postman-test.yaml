@@ -3,12 +3,12 @@ kind: TaskRun
 metadata:
   generateName: contract-test-
 spec:
-  serviceAccount: service-account
+  serviceAccountName: service-account
   taskRef:
     name:  contract-test
   inputs:
    resources:
-    - name: source
+    - name: git
       resourceRef:
         name: git
    params:

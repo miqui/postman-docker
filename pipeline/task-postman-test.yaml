@@ -22,9 +22,7 @@ spec:
   steps:
     - name: step-contract-test
       image: "miqui/postman-docker:$(inputs.params.imageTag)"
-      command: ["run"]
       workingDir: "/workspace/$(inputs.params.sourceDir)"
       args:
-        - "$(inputs.params.collectionName)"
-        - "-e environments/$(inputs.params.collectionEnvironment)"
-        - "-r cli"
+        - run $(inputs.params.collectionName) -e environments/$(inputs.params.collectionEnvironment) -r cli
+        
