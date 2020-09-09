@@ -10,7 +10,7 @@ spec:
    resources:
     - name: source
       resourceRef:
-        name: git-source
+        name: git
    params:
     - name: collectionName
       value: Restful_Booker_Collection.json
